@@ -1,15 +1,22 @@
-# build con profilo release (dopo aver aggiornato Cargo.toml)
+Basic Rust API + swagger
+Just for study purpose, not a production-ready code
+Feel free to share
+
+---
+
+# build with release profile (after updating Cargo.toml)
 cargo build --release
 
-# rimuovere simboli di debug (se non già strip)
+# remove debug symbols (se non già strip)
 strip target/release/rust-swagger-api
 
-# opzionale: compressione con upx
+# optional: upx compression
 upx --best --lzma target/release/rust-swagger-api
 
-# avviare il docker
-# build dell'immagine (esegui nella cartella del progetto)
+# Dockerize
+
+# build docker image (execute inside project's folder)
 docker build -t rust-swagger-api:latest .
 
-# esegui il container mappando la porta 3000
+# execute container mapping port 3000
 docker run --rm -p 3000:3000 rust-swagger-api:latest
