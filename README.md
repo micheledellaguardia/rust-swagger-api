@@ -7,7 +7,7 @@ Feel free to share
 # build with release profile (after updating Cargo.toml)
 cargo build --release
 
-# remove debug symbols (se non già strip)
+# remove debug symbols (if not stripped)
 strip target/release/rust-swagger-api
 
 # optional: upx compression
